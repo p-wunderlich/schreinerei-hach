@@ -1,0 +1,5 @@
+# IntelliJ IDEA local files (safe to ignore)
+.idea/*
+
+# macOS Finder metadata
+.DS_Store
