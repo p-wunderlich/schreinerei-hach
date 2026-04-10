@@ -1,10 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Schreinerei Hach</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/styles/styles.css">
 </head>
 <body>
-  Test
+
+<header>
+    <label for="nav-toggle" class="nav-label">☰ Menü</label>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+    <nav>
+        <a href="#start">Start</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#projekte">Projekte</a>
+        <a href="#referenzen">Referenzen</a>
+        <a href="#team">Team</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#impressum">Impressum</a>
+    </nav>
+</header>
+
+<section id="start" class="hero">
+    <h1>Schreinerei Hach</h1>
+    <p>Handwerk mit Leidenschaft</p>
+    <img class="zoomable" src="assets/images/PXL_20240807_072946444.jpg" alt="Herr Hach steht auf einem Gerüst und zeigt Daumen nach oben" />
+</section>
+
+<section id="leistungen">
+    <h2>Leistungen</h2>
+    <ul>
+        <li>Möbel nach Maß</li>
+        <li>Innenausbau</li>
+        <li>Bodenverlegung</li>
+        <li>Renovierungen & Koordination</li>
+    </ul>
+</section>
+
+<section id="projekte">
+    <h2>Projekte</h2>
+    <div class="grid">
+        <figure>
+            <img class="zoomable" src="assets/images/PXL_20240806_093656260.jpg" alt="Herr Hach arbeitet mit einem Multifunktionswerkzeug an einer Zimmerdecke" />
+            <figcaption>Innenausbau bei einem Kunden</figcaption>
+        </figure>
+        <figure>
+            <img class="zoomable" src="assets/images/PXL_20240807_071515063.jpg" alt="Kollege reicht Akkubohrer auf Gerüst" />
+            <figcaption>Teamarbeit auf der Baustelle</figcaption>
+        </figure>
+    </div>
+</section>
+
+<section id="referenzen">
+    <h2>Referenzen</h2>
+
+    <h3>Modernisierung eines offenen Wohnbereichs</h3>
+    <div class="grid">
+        <figure>
+            <img class="zoomable" src="assets/images/PXL_20240806_095744392.jpg" alt="Alte Decke vor Renovierung" />
+            <figcaption>Vorher</figcaption>
+        </figure>
+        <figure>
+            <img class="zoomable" src="assets/images/PXL_20240813_162125979.jpg" alt="Neue abgehängte Decke" />
+            <figcaption>Nachher</figcaption>
+        </figure>
+    </div>
+
+    <p>
+        Dieses Projekt zeigt eine fachmännische Modernisierung eines offenen Wohnbereichs mit abgehängter Decke.
+    </p>
+
+    <div class="testimonial">
+        <p><strong>Familie W.</strong></p>
+        <p>
+            Herr Hach hat bei uns im Haus die Decke im offenen Wohnbereich fachmännisch abgehängt und komplett neu gestaltet. Zusätzlich wurde Vinylboden verlegt und die gesamte Baustelle hervorragend koordiniert.
+            Besonders beeindruckt hat uns seine lösungsorientierte und zuverlässige Arbeitsweise.
+        </p>
+    </div>
+
+    <h3>Komplettsanierung eines Einfamilienhauses</h3>
+    <div class="testimonial">
+        <p><strong>Familie W.</strong></p>
+        <p>
+            Bei unserer Haussanierung hat Herr Hach nahezu alle Arbeiten übernommen: Decken, Elektrik, Böden und Fenster.
+            Die gesamte Koordination lief reibungslos über ihn als zentralen Ansprechpartner.
+        </p>
+    </div>
+
+</section>
+
+<section id="team">
+    <h2>Team</h2>
+    <p>Unser Team besteht aus erfahrenen Schreinern mit Leidenschaft fürs Handwerk.</p>
+</section>
+
+<section id="kontakt">
+    <h2>Kontakt</h2>
+    <p>Du möchtest ein Projekt anfragen oder ein Angebot erhalten? Schreib uns einfach.</p>
+
+    <form class="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Nachricht</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Anfrage senden</button>
+    </form>
+
+    <div class="contact-info">
+        <p><strong>Telefon:</strong> 01234 56789</p>
+        <p><strong>E-Mail:</strong> info@schreinerei-hach.com</p>
+    </div>
+</section>
+
+<section id="impressum">
+    <h2>Impressum</h2>
+    <p>Schreinerei Hach<br>Musterstraße 1<br>12345 Musterstadt</p>
+</section>
+
+<footer>
+    <p>&copy; 2026 Schreinerei Hach</p>
+</footer>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+    <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+    const images = document.querySelectorAll(".zoomable");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    images.forEach(img => {
+        img.addEventListener("click", () => {
+            lightbox.classList.add("active");
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+        });
+    });
+
+    lightbox.addEventListener("click", () => {
+        lightbox.classList.remove("active");
+    });
+</script>
+
 </body>
 </html>
