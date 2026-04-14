@@ -1,19 +1,52 @@
 /* =========================
+   Colors
+========================= */
+:root {
+    --primary: #484d4a;
+    --secondary: #c89d66;
+    --light: #d9d9d9;
+    --light-soft: #f3f3f3;
+    --header-height: 3.5rem;
+}
+
+/* =========================
    Base
 ========================= */
 html, body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
     font-family: 'Inter', sans-serif;
     line-height: 1.7;
     color: #333;
     background: #fff;
 }
 
+body {
+    overflow-x: hidden;
+    padding-top: var(--header-height);
+}
+
+body.legal-standalone {
+    padding-top: 0;
+}
+
 h1, h2, h3 {
     font-weight: 600;
     line-height: 1.3;
+}
+
+h2 {
+    border-bottom: 3px solid var(--secondary);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+ul {
+    padding-left: 1.25rem;
+}
+
+li::marker {
+    color: var(--secondary);
 }
 
 section {
@@ -22,28 +55,72 @@ section {
     margin: auto;
 }
 
+section:not(.intro):nth-of-type(odd) {
+    background: var(--light-soft);
+}
+
+#leistungen {
+    background: #fff;
+    padding-top: 2.5rem;
+}
+
+figure {
+    margin: 0;
+}
+
+figcaption {
+    margin-top: 0.4rem;
+    font-size: 0.875rem;
+    color: #666;
+    text-align: center;
+}
+
 /* =========================
    Header / Navigation
 ========================= */
 header {
-    background: #1f2d2f;
-    color: white;
-    padding: 1rem;
-    position: sticky;
+    background: var(--primary);
+    color: var(--light);
+    padding: 0 1rem;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    box-sizing: border-box;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-desktop {
+    position: absolute;
+    left: 1rem;
+    height: 100%;
+    width: auto;
+    border-radius: 0;
+}
+
+.logo-mobile {
+    display: none;
 }
 
 nav {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    justify-content: center;
 }
 
 nav a {
-    color: white;
+    color: var(--light);
     text-decoration: none;
     font-weight: 500;
+}
+
+nav a:hover {
+    color: var(--secondary);
 }
 
 /* =========================
@@ -57,18 +134,48 @@ nav a {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    color: var(--light);
 }
 
 @media (max-width: 768px) {
+    body {
+        padding-top: 0;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        height: auto;
+        display: block;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .logo-desktop {
+        display: none;
+    }
+
+    .logo-mobile {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        background: var(--primary);
+    }
+
+    .logo-mobile img {
+        max-width: 200px;
+        height: var(--header-height);
+        border-radius: 0;
+    }
 
     .nav-label {
         display: block;
-        margin-bottom: 0.5rem;
     }
 
     nav {
         display: none;
         flex-direction: column;
+        padding-top: 0.75rem;
     }
 
     .nav-toggle:checked + nav {
@@ -77,16 +184,46 @@ nav a {
 }
 
 /* =========================
-   Hero
+   Intro
 ========================= */
-.hero {
-    background: #f4f4f4;
+.intro {
     text-align: center;
-    padding: 6rem 1rem;
+    padding: 4rem 1rem 2.5rem;
+    background: #f4f4f4;
 }
 
-.hero h1 {
-    font-size: 2.5rem;
+.intro-title {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    color: var(--primary);
+}
+
+.intro-subtitle {
+    margin: 0.5rem 0 1.5rem;
+    font-size: clamp(1rem, 2.2vw, 1.35rem);
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.intro .zoomable {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .intro {
+        padding: 3rem 1rem 2rem;
+    }
+
+    .intro-subtitle {
+        margin-bottom: 1rem;
+    }
+
+    #leistungen {
+        padding-top: 2rem;
+    }
 }
 
 /* =========================
@@ -98,7 +235,6 @@ img {
     border-radius: 10px;
 }
 
-/* ONLY project images clickable */
 .zoomable {
     cursor: zoom-in;
 }
@@ -113,6 +249,21 @@ img {
 }
 
 /* =========================
+   Testimonial
+========================= */
+.testimonial {
+    border-left: 4px solid var(--secondary);
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    background: #f9f9f9;
+    border-radius: 0 6px 6px 0;
+}
+
+.testimonial p {
+    margin: 0 0 0.5rem;
+}
+
+/* =========================
    Contact
 ========================= */
 .contact-form {
@@ -122,20 +273,63 @@ img {
     max-width: 600px;
 }
 
+.contact-form label {
+    font-weight: 500;
+}
+
 .contact-form input,
 .contact-form textarea {
     padding: 0.75rem;
     border: 1px solid #ddd;
     border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(200, 157, 102, 0.1);
+}
+
+.contact-form button {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: var(--light);
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.contact-form button:hover {
+    background: var(--secondary);
+    color: #fff;
+}
+
+.contact-form button:focus {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
+}
+
+.contact-info {
+    margin-top: 2rem;
+}
+
+.contact-info p {
+    margin: 0.25rem 0;
 }
 
 /* =========================
-   Lightbox FIX (CENTERING + MOBILE)
+   Lightbox
 ========================= */
 .lightbox {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0, 0, 0, 0.9);
     display: none;
     justify-content: center;
     align-items: center;
@@ -158,17 +352,18 @@ img {
    Footer
 ========================= */
 footer {
-    background: #1f2d2f;
-    color: white;
+    background: var(--primary);
+    color: var(--light);
     text-align: center;
     padding: 2rem;
 }
 
-/* =========================
-   Responsive tweaks
-========================= */
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
+footer a {
+    color: var(--light);
+    text-decoration: underline;
 }
+
+footer a:hover {
+    color: var(--secondary);
+}
+

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Schreinerei Hach</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png" />
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -11,7 +12,12 @@
 </head>
 <body>
 
+<div class="logo-mobile">
+    <img src="assets/images/logo.png" alt="Schreinerei Hach – Logo" />
+</div>
+
 <header>
+    <img src="assets/images/logo.png" alt="Schreinerei Hach – Logo" class="logo-desktop" />
     <label for="nav-toggle" class="nav-label">☰ Menü</label>
     <input type="checkbox" id="nav-toggle" class="nav-toggle" />
 
@@ -20,15 +26,13 @@
         <a href="#leistungen">Leistungen</a>
         <a href="#projekte">Projekte</a>
         <a href="#referenzen">Referenzen</a>
-        <a href="#team">Team</a>
         <a href="#kontakt">Kontakt</a>
-        <a href="#impressum">Impressum</a>
     </nav>
 </header>
 
-<section id="start" class="hero">
-    <h1>Schreinerei Hach</h1>
-    <p>Handwerk mit Leidenschaft</p>
+<section id="start" class="intro">
+    <h1 class="intro-title">Tischler Tobi</h1>
+    <p class="intro-subtitle">Handwerk mit Leidenschaft</p>
     <img class="zoomable" src="assets/images/PXL_20240807_072946444.jpg" alt="Herr Hach steht auf einem Gerüst und zeigt Daumen nach oben" />
 </section>
 
@@ -76,7 +80,7 @@
     </p>
 
     <div class="testimonial">
-        <p><strong>Familie W.</strong></p>
+        <p><strong>Familie Wu.</strong></p>
         <p>
             Herr Hach hat bei uns im Haus die Decke im offenen Wohnbereich fachmännisch abgehängt und komplett neu gestaltet. Zusätzlich wurde Vinylboden verlegt und die gesamte Baustelle hervorragend koordiniert.
             Besonders beeindruckt hat uns seine lösungsorientierte und zuverlässige Arbeitsweise.
@@ -85,18 +89,13 @@
 
     <h3>Komplettsanierung eines Einfamilienhauses</h3>
     <div class="testimonial">
-        <p><strong>Familie W.</strong></p>
+        <p><strong>Familie Wa.</strong></p>
         <p>
             Bei unserer Haussanierung hat Herr Hach nahezu alle Arbeiten übernommen: Decken, Elektrik, Böden und Fenster.
             Die gesamte Koordination lief reibungslos über ihn als zentralen Ansprechpartner.
         </p>
     </div>
 
-</section>
-
-<section id="team">
-    <h2>Team</h2>
-    <p>Unser Team besteht aus erfahrenen Schreinern mit Leidenschaft fürs Handwerk.</p>
 </section>
 
 <section id="kontakt">
@@ -117,18 +116,14 @@
     </form>
 
     <div class="contact-info">
-        <p><strong>Telefon:</strong> 01234 56789</p>
+        <p><strong>Tel.:</strong> <a href="tel:+4961314827226">06131-4827226</a></p>
+        <p><strong>Mobil:</strong> <a href="tel:+4917663241527">0176-63241527</a></p>
         <p><strong>E-Mail:</strong> info@schreinerei-hach.com</p>
     </div>
 </section>
 
-<section id="impressum">
-    <h2>Impressum</h2>
-    <p>Schreinerei Hach<br>Musterstraße 1<br>12345 Musterstadt</p>
-</section>
-
 <footer>
-    <p>&copy; 2026 Schreinerei Hach</p>
+    <p>&copy; 2026 Schreinerei Hach | <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a></p>
 </footer>
 
 <!-- Lightbox -->
