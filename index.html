@@ -118,25 +118,50 @@
 
 <section id="kontakt">
     <h2>Kontakt</h2>
-    <p>Du möchtest ein Projekt anfragen oder ein Angebot erhalten? Schreib uns einfach.</p>
+    <div class="contact-layout">
+        <div class="contact-intro">
+            <p class="contact-kicker">Projekt anfragen</p>
+            <h3>Erzähl kurz, worum es geht.</h3>
+            <p>Ob Einbaumöbel, Innenausbau oder Renovierung: Wir melden uns zur Abstimmung der nächsten Schritte.</p>
 
-    <form class="contact-form">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
+            <div class="contact-card-list" aria-label="Direkte Kontaktmöglichkeiten">
+                <a class="contact-card" href="tel:+4961314827226">
+                    <span>Telefon</span>
+                    <strong>06131-4827226</strong>
+                </a>
+                <a class="contact-card" href="tel:+4917663241527">
+                    <span>Mobil</span>
+                    <strong>0176-63241527</strong>
+                </a>
+                <a class="contact-card" href="mailto:info@schreinerei-hach.com">
+                    <span>E-Mail</span>
+                    <strong>info@schreinerei-hach.com</strong>
+                </a>
+            </div>
+        </div>
 
-        <label for="email">E-Mail</label>
-        <input type="email" id="email" name="email" required>
+        <div class="contact-panel">
+            <form class="contact-form">
+                <div class="contact-form-grid">
+                    <div class="contact-field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
 
-        <label for="message">Nachricht</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+                    <div class="contact-field">
+                        <label for="email">E-Mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
 
-        <button type="submit">Anfrage senden</button>
-    </form>
+                <div class="contact-field">
+                    <label for="message">Nachricht</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
 
-    <div class="contact-info">
-        <p><strong>Tel.:</strong> <a href="tel:+4961314827226">06131-4827226</a></p>
-        <p><strong>Mobil:</strong> <a href="tel:+4917663241527">0176-63241527</a></p>
-        <p><strong>E-Mail:</strong> info@schreinerei-hach.com</p>
+                <button class="contact-submit" type="submit">Anfrage senden</button>
+            </form>
+        </div>
     </div>
 </section>
 
