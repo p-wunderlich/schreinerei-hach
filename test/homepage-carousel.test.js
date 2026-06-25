@@ -20,5 +20,8 @@ for (const image of carouselImages) {
 }
 
 assert.match(css, /\.intro-carousel-track\s*\{[\s\S]*animation:\s*intro-carousel/, "carousel track is animated");
+const carouselImageRule = css.match(/\.intro-carousel \.zoomable\s*\{[^}]*\}/);
+assert.ok(carouselImageRule, "intro carousel image rule exists");
+assert.match(carouselImageRule[0], /aspect-ratio:\s*4\s*\/\s*3/, "intro carousel uses a compact 4 / 3 image ratio");
 assert.match(css, /@keyframes\s+intro-carousel/, "carousel keyframes exist");
 assert.match(css, /prefers-reduced-motion:\s*reduce/, "reduced motion users are respected");
